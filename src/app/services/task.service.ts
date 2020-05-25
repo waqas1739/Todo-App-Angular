@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { Task } from 'src/models/task.mode';
-import { Filter } from 'src/models/filter.model';
-import { StorageService } from 'src/services/storage.service';
+import { Task } from 'src/app/models/task.model';
+import { Filter } from 'src/app/models/filter.model';
+import { StorageService } from 'src/app/services/storage.service';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 
 

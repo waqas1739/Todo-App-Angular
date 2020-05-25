@@ -1,0 +1,32 @@
+.wrapper {
+    display        : flex;
+    justify-content: center;
+    flex-direction : column;
+    align-items    : center;
+    height         : 80%;
+
+    .title {
+        font-size  : 30px;
+        font-weight: 200;
+        color      : #0c0eb4;
+    }
+
+    .task-wrapper {
+        display       : flex;
+        flex-direction: column;
+        padding       : 0;
+        margin        : 0;
+        width         : 700px;
+
+        app-header,
+        app-footer,
+        app-task {
+            margin: 20px 0;
+        }
+    }
+
+    .copyright {
+        margin-top: 45px;
+        color     : #a7a7a7;
+    }
+}
