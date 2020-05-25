@@ -1,1 +1,6 @@
-<p>add-task works!</p>
+<mat-card>
+    <mat-list>
+        <app-task *ngFor="let task of tasks$ | async" [task]="task" (changeStatus)="onChangeTaskStatus($event)"
+            (editTask)="onEditTask($event)" (deleteTask)="onDeleteTask($event)"></app-task>
+    </mat-list>
+</mat-card>
