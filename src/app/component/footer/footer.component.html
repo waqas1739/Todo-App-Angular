@@ -1,1 +1,13 @@
-<p>footer works!</p>
+<mat-card class="footer">
+    <button mat-button disabled>
+        {{ length }} {{ length > 1 ? 'items' : 'item' }}
+    </button>
+    <mat-button-toggle-group>
+        <mat-button-toggle *ngFor="let btn of filterButton" value="btn.type" [checked]="btn.isActive"
+            (click)="filter(btn.type)">{{ btn.label }}</mat-button-toggle>
+    </mat-button-toggle-group>
+    <button mat-button color="warn" class="btn-clear" [ngClass]="!(hasComplete$ | async) ? 'active' : ''"
+        (click)="clearComplete()">
+        Clear Completed
+    </button>
+</mat-card>

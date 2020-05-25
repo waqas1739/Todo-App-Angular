@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskService } from 'src/app/services/task.service';
 
 @Component({
   selector: 'app-overview',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./overview.component.scss']
 })
 export class OverviewComponent implements OnInit {
+  taskContent: string = '';
 
-  constructor() { }
+  constructor(private taskService: TaskService) { }
 
-  ngOnInit(): void {
+  ngOnInit() { }
+
+  onSubmit() {
+    if (this.taskContent.trim() === '') {
+      return;
+    }
+    this.taskService.addTask(this.taskContent);
+    this.taskContent = '';
   }
-
 }

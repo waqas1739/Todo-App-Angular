@@ -1,0 +1,12 @@
+.footer {
+    text-align     : center;
+    display        : flex;
+    flex-direction : row;
+    justify-content: space-between;
+
+    .btn-clear {
+        &.active {
+            visibility: hidden;
+        }
+    }
+}

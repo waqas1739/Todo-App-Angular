@@ -1,1 +1,7 @@
-<p>overview works!</p>
+<mat-form-field class="app-input">
+    <input matInput type="input" placeholder="Add your Task here..." [(ngModel)]="taskContent"
+        (keyup.enter)="onSubmit()" />
+    <button mat-button matSuffix mat-icon-button aria-label="Add" (click)="onSubmit()">
+        <mat-icon>add</mat-icon>
+    </button>
+</mat-form-field>

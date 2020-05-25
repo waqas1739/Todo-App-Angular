@@ -1,1 +1,29 @@
-<p>task works!</p>
+<mat-list-item class="list-item" (mouseover)="isHovered = true" (mouseout)="isHovered = false">
+    <div class="item-content" *ngIf="!isEditted">
+        <mat-checkbox color="primary" class="custom-frame" [checked]="task.isCompleted" [id]="task.id"
+            (change)="changeTaskStatus()"><span>{{ task.content }}</span></mat-checkbox>
+        <div class="btn-hover" [hidden]="!isHovered">
+            <span [hidden]="task.isCompleted">
+                <button mat-icon-button aria-label="Edit">
+                    <mat-icon (click)="isEditted = true">edit</mat-icon>
+                </button>
+            </span>
+            <span>
+                <button mat-icon-button aria-label="Delete" (click)="onDeleteTask()">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </span>
+        </div>
+    </div>
+
+    <div class="edit-form" *ngIf="isEditted">
+        <mat-form-field class="item-edit-input">
+            <input matInput type="text" [(ngModel)]="task.content" (keyup.enter)="onEditTask()" />
+            <button mat-button matSuffix mat-icon-button aria-label="Add" (click)="onEditTask()">
+                <mat-icon>done</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+
+    <mat-divider></mat-divider>
+</mat-list-item>
